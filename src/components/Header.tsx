@@ -1,5 +1,5 @@
-import { Flex, Input, Text, Icon } from "@chakra-ui/react";
-import { RiSearchLine } from 'react-icons/ri'
+import { Flex, Input, Text, Icon, HStack, Box, Avatar } from "@chakra-ui/react";
+import { RiSearchLine, RiNotificationLine, RiUserAddLine } from 'react-icons/ri'
 
 export function Header() {
   return (
@@ -22,7 +22,6 @@ export function Header() {
         DashJr
         <Text as="span" ml="1" color="blue.400">.</Text>
       </Text>
-
       <Flex
         as="label"
         flex="1"
@@ -44,9 +43,34 @@ export function Header() {
           placeholder="Buscar na plataforma"
           _placeholder={{ color: 'gray.400' }}
         />
-
         <Icon as={RiSearchLine} fontSize="25" />
+      </Flex>
+      <Flex
+        align="center"
+        ml="auto"
+      >
+        <HStack
+          spacing="8"
+          mx="8"
+          pr="8"
+          py="1"
+          color="gray.200"
+          borderRightWidth={1}
+          borderColor="gray.700"
+        >
+          <Icon as={RiNotificationLine} fontSize="20" />
+          <Icon as={RiUserAddLine} fontSize="20" />
+        </HStack>
 
+        <Flex align="center">
+          <Box mr="4" textAlign="right">
+            <Text>Jarilton Junior</Text>
+            <Text color="gray.300" fontSize="small">
+              jariltonpereira02@hotymail.com
+            </Text>
+          </Box>
+          <Avatar size="md" name="Jarilton Junior" src="https://github.com/jarilton.png" />
+        </Flex>
       </Flex>
     </Flex>
   )
