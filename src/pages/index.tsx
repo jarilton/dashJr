@@ -1,4 +1,4 @@
-import { Button, Flex, Stack } from "@chakra-ui/react";
+import { Button, Flex, Link, Stack, Text } from "@chakra-ui/react";
 import { Input } from "../components/form/Input";
 
 export default function Sign() {
@@ -19,13 +19,17 @@ export default function Sign() {
         flexDir="column"
       >
         <Stack spacing="4">
+          <Text align="center" fontWeight="bold" fontSize='4xl'>
+            Dash Jr
+          </Text>
 
-          <Input name="email" type="email" label="E-mail" />
-          <Input name="password" type="password" label="Senha" />
+          <Input name="email" type="email" label="E-mail:" />
+          <Input name="password" type="password" label="Senha:" />
+          <Link align="right">Esqueci minha senha</Link>
 
         </Stack>
         <Button type="submit" mt="6" colorScheme="blue" size="lg">Entrar</Button>
       </Flex>
-    </Flex>
+    </Flex >
   )
 }
