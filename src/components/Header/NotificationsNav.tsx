@@ -8,9 +8,9 @@ export function NotificationsNav() {
       ml="auto"
     >
       <HStack
-        spacing="8"
-        mx="8"
-        pr="8"
+        spacing={["6", "8"]}
+        mx={["6", "8"]}
+        pr={["6", "8"]}
         py="1"
         color="gray.200"
         borderRightWidth={1}
