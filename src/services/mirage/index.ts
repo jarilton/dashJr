@@ -1,5 +1,5 @@
-import { createServer, Model } from 'miragejs'
-import { threadId } from 'worker_threads'
+import { createServer, Factory, Model } from 'miragejs'
+import faker from 'faker'
 
 type user = {
   name: string;
@@ -12,6 +12,25 @@ export function makeServer() {
   const server = createServer({
     models: {
       user: Model.extend<Partial<user>>({})
+    },
+
+    factories: {
+      user: Factory.extend({
+        name(i: number) {
+          return `User ${i + 1}`
+        },
+        email() {
+          return faker.internet.email().toLowerCase()
+        },
+        createdAt() {
+          return faker.date.recent(10)
+        },
+
+      })
+    },
+
+    seeds(server) {
+      server.createList('user', 200)
     },
 
     routes() {
